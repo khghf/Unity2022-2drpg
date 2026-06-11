@@ -1,0 +1,220 @@
+{
+    "FileVersion": "2025.9.30",
+    "EnableAddressable": true,
+    "SupportExtensionless": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "ReplaceAssetPathWithAddress": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 1,
+    "BuildPipeline": "EditorSimulateBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "2026-06-09-1191",
+    "PackageNote": "2026/6/9 19:51:36",
+    "AssetList": [
+        {
+            "Address": "CityGate",
+            "AssetPath": "Assets/Res/Prefabs/Architecture/CityGate.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "tower",
+            "AssetPath": "Assets/Res/Prefabs/Architecture/tower.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Wall",
+            "AssetPath": "Assets/Res/Prefabs/Architecture/Wall.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Boot",
+            "AssetPath": "Assets/Res/Prefabs/Boot.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Balin",
+            "AssetPath": "Assets/Res/Prefabs/Character/Hero/Balin/Balin.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Jeanne",
+            "AssetPath": "Assets/Res/Prefabs/Character/Hero/Jeanne/Jeanne.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "BoxWithBoneFllower",
+            "AssetPath": "Assets/Res/Prefabs/Collider/BoxWithBoneFllower.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "PolygonWithBoneFllower",
+            "AssetPath": "Assets/Res/Prefabs/Collider/PolygonWithBoneFllower.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "MessageBox",
+            "AssetPath": "Assets/Res/Prefabs/UI/MessageBox.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 5,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Skill",
+            "AssetPath": "Assets/Res/Prefabs/UI/Skill.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 5,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "BattleScene_Level",
+            "AssetPath": "Assets/Scenes/BattleScene/Level.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "MapScene_StartLevel",
+            "AssetPath": "Assets/Scenes/MapScene/StartLevel.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 7,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "UIScene_MainInterface",
+            "AssetPath": "Assets/Scenes/UIScene/MainInterface.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 8,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "UIScene_TransitionLevel",
+            "AssetPath": "Assets/Scenes/UIScene/TransitionLevel.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 8,
+            "DependBundleIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_res_prefabs.bundle",
+            "UnityCRC": 0,
+            "FileHash": "772fe42dd4ab14e4282d64f74666b556",
+            "FileCRC": 0,
+            "FileSize": 17940,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_res_prefabs_architecture.bundle",
+            "UnityCRC": 0,
+            "FileHash": "56c4428b0731dd94874bfb7f73259617",
+            "FileCRC": 0,
+            "FileSize": 8263,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_res_prefabs_character_hero_balin.bundle",
+            "UnityCRC": 0,
+            "FileHash": "5189b7a1d0d0d27277d943c11ff5b32d",
+            "FileCRC": 0,
+            "FileSize": 18719,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_res_prefabs_character_hero_jeanne.bundle",
+            "UnityCRC": 0,
+            "FileHash": "977b895f37fb7c35c7730ff8692e8ee1",
+            "FileCRC": 0,
+            "FileSize": 12199,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_res_prefabs_collider.bundle",
+            "UnityCRC": 0,
+            "FileHash": "3017d57ad4a44c2b4064f619a69bdebf",
+            "FileCRC": 0,
+            "FileSize": 6696,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_res_prefabs_ui.bundle",
+            "UnityCRC": 0,
+            "FileHash": "21de9d6d9d8397b2540a3d96aece9ef1",
+            "FileCRC": 0,
+            "FileSize": 16605,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_scenes_battlescene.bundle",
+            "UnityCRC": 0,
+            "FileHash": "d639f1bb3238caa7e8de48030bc5177b",
+            "FileCRC": 0,
+            "FileSize": 42729,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_scenes_mapscene.bundle",
+            "UnityCRC": 0,
+            "FileHash": "5394fb5d5046819d81668ee9d7035951",
+            "FileCRC": 0,
+            "FileSize": 3079443,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_scenes_uiscene.bundle",
+            "UnityCRC": 0,
+            "FileHash": "02731e8ca95d10377541f76a9770b866",
+            "FileCRC": 0,
+            "FileSize": 61998,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        }
+    ]
+}

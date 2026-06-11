@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - LevelUICamera
+  - Hero
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Character
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BGLayer
+    uniqueID: 2068029951
+    locked: 0
+  - name: GroundLayer
+    uniqueID: 3665814879
+    locked: 0
+  - name: CharacterLayer
+    uniqueID: 3213679931
+    locked: 0
+  - name: FGLayer
+    uniqueID: 2824510767
+    locked: 0
+  - name: UILayer
+    uniqueID: 2610909643
+    locked: 0
