@@ -10,7 +10,7 @@
     "BuildPipeline": "EditorSimulateBuildPipeline",
     "PackageName": "DefaultPackage",
     "PackageVersion": "Simulate",
-    "PackageNote": "2026/6/15 15:49:29",
+    "PackageNote": "2026/6/15 16:14:44",
     "AssetList": [
         {
             "Address": "Prefab_CityGate",
@@ -235,7 +235,7 @@
             "UnityCRC": 0,
             "FileHash": "5394fb5d5046819d81668ee9d7035951",
             "FileCRC": 0,
-            "FileSize": 6331017,
+            "FileSize": 6332233,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []

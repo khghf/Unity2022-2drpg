@@ -172,7 +172,6 @@ public static class AStarPathfinder
             currentNode = currentNode.parent;
         }
 
-        // 因为是倒着存的，最后翻转一下集合，变成 从起点->终点 的正向路径
         path.Reverse();
         return path;
     }

@@ -80,7 +80,11 @@ namespace GridEditor
 
         public override void OnInspectorGUI()
         {
-            EditorGUILayout.LabelField("默认模式");
+            EditorGUILayout.Space(15);
+            EditorGUILayout.LabelField("默认模式", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("按下G键进入绘制模式", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("按下L键进入逻辑网格编辑模式", EditorStyles.boldLabel);
+
         }
 
         private void SnapSelectedObjects(Vector3 gridTopLeft, float cellSize)

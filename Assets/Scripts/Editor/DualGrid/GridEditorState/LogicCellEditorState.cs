@@ -100,6 +100,9 @@ namespace GridEditor
             GUILayout.Space(15);
             EditorGUILayout.LabelField("逻辑网格编辑模式", EditorStyles.boldLabel);
 
+            EditorGUILayout.LabelField("按下Ctrl+U键+(鼠标左/右键)编辑网格可达性", EditorStyles.boldLabel);
+
+
             if (selectedLogicCell.x == -1 || selectedLogicCell.y == -1)
             {
                 EditorGUILayout.HelpBox("请在Scene视图中【点击】一个绿色格子以编辑其数据。", MessageType.Info);

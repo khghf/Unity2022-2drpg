@@ -79,28 +79,23 @@ namespace GridEditor
                     fsmEditor.AddState<PaintState>();
                     fsmEditor.AddState<LogicCellEditorState>();
                     fsmEditor.SetEntryState<DefaultState>();
-                    fsmEditor.Run();
 
                     globSettings=fsmEditor.AddState<DualGridSettings>();
                     fsmEditor.RemoveState<DualGridSettings>();
                 }
 
 
-                fsmEditor?.ChangeState<DefaultState>();
+                fsmEditor.ChangeState<DefaultState>();
                 Debug.Log("<b>[Grid Editor]</b> 已开启双网格编辑模式。\n<b>操作说明：</b>双击左键选物体拖拽，双击空白处恢复涂抹，右键选格子编辑数据！");
             }
             else
             {
                 Debug.Log("<b>[Grid Editor]</b> 已关闭网格编辑模式。");
 
-                //fsmEditor.Blackboard.RemoveItem("GridManagerEditor");
-                //fsmEditor.Blackboard.RemoveItem("GridMgr");
-                //fsmEditor.Blackboard.RemoveItem("SerializedObject");
                 fsmEditor=null;
                 globSettings=null;
             }
 
-            //if (SceneView.lastActiveSceneView != null) SceneView.lastActiveSceneView.Repaint();
         }
         private static void OnDuringSceneGui(SceneView sceneView)
         {
