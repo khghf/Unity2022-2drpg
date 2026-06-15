@@ -9,22 +9,24 @@ namespace GFW.Fsm
         //所属状态机
         public Fsm OwnerFsm;
 
-        public event Action OnEnterHook;
-        public event Action OnUpdateHook;
+
         public event Action OnExitHook;
         public virtual void OnEnter()
         {
-            OnEnterHook?.Invoke();
         }
 
         public virtual void OnUpdate()
         {
-            OnUpdateHook?.Invoke();
         }
 
         public virtual void OnExit()
         {
             OnExitHook?.Invoke();
+        }
+
+        public virtual void OnAdded()
+        {
+
         }
 
         /// <summary>

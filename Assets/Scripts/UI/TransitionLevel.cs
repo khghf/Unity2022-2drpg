@@ -22,10 +22,10 @@ public class TransitionLevel : MonoBehaviour
 
     private void Awake()
     {
-        Canvas canvas = GetComponent<Canvas>();
-        if (canvas == null) return;
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        canvas.sortingOrder = 9999; 
+        //Canvas canvas = GetComponent<Canvas>();
+        //if (canvas == null) return;
+        //canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        //canvas.sortingOrder = 9999; 
     }
     private void Start()
     {

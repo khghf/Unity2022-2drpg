@@ -35,8 +35,8 @@ public class BattleCharacter : Character
 
     private void Awake()
     {
-        _Fsm.Owner=gameObject;
-        _Fsm.SetBlackboard(_FsmBlackboard);
+        _Fsm.owner=gameObject;
+        //_Fsm.SetBlackboard(_FsmBlackboard);
         _Fsm.AddState<IdleState>();
         _Fsm.AddState<RunState>();
         _Fsm.AddState<CommonAttackState>();

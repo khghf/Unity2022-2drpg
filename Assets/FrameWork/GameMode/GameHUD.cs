@@ -5,6 +5,7 @@ namespace GFW.Gameplay
 {
     public class GameHUD : MonoBehaviour
     {
+
     }
 }
 

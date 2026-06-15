@@ -10,10 +10,10 @@
     "BuildPipeline": "EditorSimulateBuildPipeline",
     "PackageName": "DefaultPackage",
     "PackageVersion": "Simulate",
-    "PackageNote": "2026/6/11 23:17:39",
+    "PackageNote": "2026/6/15 15:49:29",
     "AssetList": [
         {
-            "Address": "CityGate",
+            "Address": "Prefab_CityGate",
             "AssetPath": "Assets/Res/Prefabs/Architecture/CityGate.prefab",
             "AssetGUID": "",
             "AssetTags": [],
@@ -21,7 +21,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "tower",
+            "Address": "Prefab_tower",
             "AssetPath": "Assets/Res/Prefabs/Architecture/tower.prefab",
             "AssetGUID": "",
             "AssetTags": [],
@@ -29,7 +29,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "Wall",
+            "Address": "Prefab_Wall",
             "AssetPath": "Assets/Res/Prefabs/Architecture/Wall.prefab",
             "AssetGUID": "",
             "AssetTags": [],
@@ -37,7 +37,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "Boot",
+            "Address": "Prefab_Boot",
             "AssetPath": "Assets/Res/Prefabs/Boot.prefab",
             "AssetGUID": "",
             "AssetTags": [],
@@ -45,7 +45,15 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "Balin",
+            "Address": "Prefab_Camera",
+            "AssetPath": "Assets/Res/Prefabs/Camera.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "Prefab_Balin",
             "AssetPath": "Assets/Res/Prefabs/Character/Hero/Balin/Balin.prefab",
             "AssetGUID": "",
             "AssetTags": [],
@@ -53,7 +61,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "Jeanne",
+            "Address": "Prefab_Jeanne",
             "AssetPath": "Assets/Res/Prefabs/Character/Hero/Jeanne/Jeanne.prefab",
             "AssetGUID": "",
             "AssetTags": [],
@@ -61,7 +69,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "PlayerCharacter",
+            "Address": "Prefab_PlayerCharacter",
             "AssetPath": "Assets/Res/Prefabs/Character/MapCharacter/PlayerCharacter.prefab",
             "AssetGUID": "",
             "AssetTags": [],
@@ -69,7 +77,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "BoxWithBoneFllower",
+            "Address": "Prefab_BoxWithBoneFllower",
             "AssetPath": "Assets/Res/Prefabs/Collider/BoxWithBoneFllower.prefab",
             "AssetGUID": "",
             "AssetTags": [],
@@ -77,7 +85,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "PolygonWithBoneFllower",
+            "Address": "Prefab_PolygonWithBoneFllower",
             "AssetPath": "Assets/Res/Prefabs/Collider/PolygonWithBoneFllower.prefab",
             "AssetGUID": "",
             "AssetTags": [],
@@ -85,7 +93,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "MessageBox",
+            "Address": "Prefab_MessageBox",
             "AssetPath": "Assets/Res/Prefabs/UI/MessageBox.prefab",
             "AssetGUID": "",
             "AssetTags": [],
@@ -93,7 +101,7 @@
             "DependBundleIDs": []
         },
         {
-            "Address": "Skill",
+            "Address": "Prefab_Skill",
             "AssetPath": "Assets/Res/Prefabs/UI/Skill.prefab",
             "AssetGUID": "",
             "AssetTags": [],
@@ -106,6 +114,14 @@
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 7,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "MapScene_MapTemplate",
+            "AssetPath": "Assets/Scenes/MapScene/MapTemplate.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 8,
             "DependBundleIDs": []
         },
         {
@@ -139,7 +155,7 @@
             "UnityCRC": 0,
             "FileHash": "772fe42dd4ab14e4282d64f74666b556",
             "FileCRC": 0,
-            "FileSize": 17940,
+            "FileSize": 26571,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
@@ -179,7 +195,7 @@
             "UnityCRC": 0,
             "FileHash": "fcda55b767bdb84f5227af5202595de7",
             "FileCRC": 0,
-            "FileSize": 4713,
+            "FileSize": 4693,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
@@ -219,7 +235,7 @@
             "UnityCRC": 0,
             "FileHash": "5394fb5d5046819d81668ee9d7035951",
             "FileCRC": 0,
-            "FileSize": 3079106,
+            "FileSize": 6331017,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
@@ -229,7 +245,7 @@
             "UnityCRC": 0,
             "FileHash": "02731e8ca95d10377541f76a9770b866",
             "FileCRC": 0,
-            "FileSize": 63128,
+            "FileSize": 63210,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []

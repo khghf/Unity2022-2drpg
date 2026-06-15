@@ -10,7 +10,7 @@ namespace GFW.Fsm
 
         public void AddItem(string key, object value)
         {
-            if (_Items.ContainsKey(key)) return;
+            //if (_Items.ContainsKey(key)) return;
             _Items[key] = value;
         }
 
@@ -26,35 +26,31 @@ namespace GFW.Fsm
 
     public class Fsm 
     {
-        public GameObject Owner { get; set; }
-        private Dictionary<int, FsmState> _States = new Dictionary<int, FsmState>();
+        public GameObject owner { get; set; }
+        private Dictionary<int, FsmState> _states = new Dictionary<int, FsmState>();
 
-        private FsmState _CurState = null;
-        public FsmState CurState=>_CurState;
+        private FsmState _curState = null;
+        public FsmState CurState=>_curState;
         //控制状态的更新，不影响状态的转换
-        private bool _IsRunning=false;
-        private bool _IsFirstRun=true;
+        private bool _isRunning=false;
+        private bool _isFirstRun=true;
 
-        private BlackBoard _Blackboard=new BlackBoard();
-        public BlackBoard Blackboard=>_Blackboard;
         //黑板用于给状态提供额外的信息
-        [SerializeField]
-        private object _BlackboardInternal = null;
-        public object BlackboardInternal => _BlackboardInternal;
-
+        private BlackBoard _blackboard=new BlackBoard();
+        public BlackBoard Blackboard=>_blackboard;
 
         public Fsm() { }
 
         public Fsm(GameObject owner)
         {
-            Owner=owner;
+            this.owner=owner;
         }
 
         public void Update()
         {
-            if(_IsRunning)
+            if(_isRunning)
             {
-                _CurState?.OnUpdate();
+                _curState?.OnUpdate();
             }
         }
 
@@ -65,13 +61,14 @@ namespace GFW.Fsm
         public void SetEntryState<T>()where T:FsmState
         {
             Type type = typeof(T);
-            int id=type.GetHashCode();
-            if(!_States.ContainsKey(id))
+            int id = type.GetHashCode();
+            if (!_states.ContainsKey(id))
             {
                 Debug.LogWarning($"设置入口状态失败，状态机内没有{type.Name}状态");
                 return;
             }
-            _CurState= _States[id];
+            //ChangeState<T>();
+            _curState= _states[id];
         }
 
         /// <summary>
@@ -79,16 +76,16 @@ namespace GFW.Fsm
         /// </summary>
         public void Run()
         {
-            _IsRunning=true;
-            if (_IsFirstRun)
+            _isRunning=true;
+            if (_isFirstRun)
             {
-                _IsFirstRun=false;
-                if(_CurState==null)
+                _isFirstRun=false;
+                if(_curState==null)
                 {
                     Debug.LogWarning($"运行状态机前必须设置入口状态(请调用SetEntryState)");
                     return;
                 }
-                _CurState.OnEnter();
+                _curState.OnEnter();
             }
         }
 
@@ -98,26 +95,13 @@ namespace GFW.Fsm
         /// </summary>
         public void Stop()
         {
-            _IsRunning=false;
+            _isRunning=false;
         }
 
-        public void SetBlackboard(object blackboard)
-        {
-            _BlackboardInternal = blackboard;
-        }
-
-        public Fsm AddState<T>(T state)where T : FsmState
-        {
-            int id = typeof(T).GetHashCode();
-            if (_States.ContainsKey(id))
-            {
-                Debug.LogWarning("[Fsm]重复添加状态");
-                return this;
-            }
-            state.OwnerFsm = this;
-            _States[id] = state;
-            return this;
-        }
+        //public void SetBlackboard(object blackboard)
+        //{
+        //    _blackboardInternal = blackboard;
+        //}
 
         public T AddState<T>()where T : FsmState, new() 
         {
@@ -125,30 +109,78 @@ namespace GFW.Fsm
             AddState(state);
             return state;
         }
+        public Fsm AddState<T>(T state) where T : FsmState
+        {
+            int id = typeof(T).GetHashCode();
+            if (_states.ContainsKey(id))
+            {
+                Debug.LogWarning("[Fsm]重复添加状态");
+                return this;
+            }
+            state.OwnerFsm = this;
+            _states[id] = state;
+            OnAddState(state);
+            return this;
+        }
 
-        public void ChangeState<T>()where T:FsmState
+        public void RemoveState<T>()where T:FsmState
+        {
+            int id = typeof(T).GetHashCode();
+            if (!_states.ContainsKey(id))return ;
+            if (_curState==_states[id])
+            {
+                Debug.LogWarning("不能移除正在运行的状态");
+                return;
+            }
+            _states.Remove(id);
+        }
+        public void RemoveAllState()
+        {
+            Stop();
+            foreach(var state in _states.Values)
+            {
+                OnRemoveState(state);
+            }
+            _states.Clear();
+        }
+
+        public void ChangeState<T>() where T : FsmState
         {
             Type type = typeof(T);
-            int id = type.GetHashCode();    
-            if (!_States.ContainsKey(id))
+            int id = type.GetHashCode();
+            if (!_states.ContainsKey(id))
             {
                 Debug.LogWarning($"[Fsm]状态改变失败状态机内没有{type.Name}");
             }
             ChangeState(id);
         }
-
         private void ChangeState(int id)
         {
-            _CurState?.OnExit();
-            _CurState=_States[id];
-            _CurState.OnEnter();
+            if (_curState==_states[id]) return;
+            _curState?.OnExit();
+            _curState=_states[id];
+            OnChangeState(_curState);
+            _curState.OnEnter();
         }
-        
+
         public FsmState GetState<T>()where T:FsmState
         {
             FsmState state = null;
-            _States.TryGetValue(typeof(T).GetHashCode(), out state);
+            _states.TryGetValue(typeof(T).GetHashCode(), out state);
             return state;
+        }
+
+        protected virtual void OnAddState(FsmState state)
+        {
+            state?.OnAdded();
+        }
+        protected virtual void OnRemoveState(FsmState state)
+        {
+
+        }
+        protected virtual void OnChangeState(FsmState state)
+        {
+
         }
     }
 }

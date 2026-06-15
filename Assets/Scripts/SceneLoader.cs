@@ -1,4 +1,6 @@
-﻿using GFW.Gameplay;
+﻿using Cinemachine;
+using DG.Tweening;
+using GFW.Gameplay;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -87,22 +89,10 @@ public class SceneLoader
             yield return new WaitForSeconds(transitionLevel.FadeOutTime);
             target.ActivateScene();
             SceneManager.SetActiveScene(target.SceneObject);
-
+            
             if (transition.IsValid)transition.UnloadAsync();
         }
     }
-
-    public static GameObject GetRootGameObjectFromScene(in Scene scene,string objName)
-    {
-        var sceneGameObjects=scene.GetRootGameObjects();
-
-        foreach (var gameObject in sceneGameObjects)
-        {
-            if(gameObject.name==objName)return gameObject;
-        }
-        return null;
-    }
-
     /// <summary>
     /// 初始化目标场景
     /// </summary>
@@ -115,13 +105,22 @@ public class SceneLoader
         if(transitionType== TransitionType.UIToMap)
         {
             SaveData saveData= SaveMgr.GetSaveData(0);
+
             GameScene gameScene = GameScene.Inst;
-
-            AssetHandle assetHandle= YooAssets.LoadAssetSync<GameObject>($"Prefab_{saveData.playerPrefabName}");
+            MapPlayerController mapPlayerController = gameScene.transform.Find("PlayerController").GetComponent<MapPlayerController>();
+            MapHUD mapHUD = gameScene.transform.Find("HUD").GetComponent<MapHUD>();
+            Camera camera = gameScene.transform.Find("Camera").GetComponent<Camera>();
+            CinemachineVirtualCamera cinemachineCamera = gameScene.transform.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
+            mapPlayerController.virtualCamera = cinemachineCamera;
+            AssetHandle assetHandle = YooAssets.LoadAssetSync<GameObject>($"Prefab_{saveData.playerPrefabName}");
             GameObject playerGO= assetHandle.InstantiateSync();
-
+            playerGO.transform.parent=gameScene.transform;
             PlayerCharacter playerCharacter = playerGO.GetComponent<PlayerCharacter>();
-            //gameScene.Init(new MapPlayerController(), playerCharacter, null);
+
+            cinemachineCamera.Follow=playerGO.transform;
+
+            gameScene.Init(mapPlayerController, playerCharacter, camera, mapHUD);
+
 
             playerCharacter.SetPosTo(saveData.playerPos);
         }
@@ -132,7 +131,16 @@ public class SceneLoader
         }
 
     }
+    public static GameObject GetRootGameObjectFromScene(in Scene scene, string objName)
+    {
+        var sceneGameObjects = scene.GetRootGameObjects();
 
+        foreach (var gameObject in sceneGameObjects)
+        {
+            if (gameObject.name==objName) return gameObject;
+        }
+        return null;
+    }
     private static TransitionType GetTransitionType(GameMgr.SceneType targetType)
     {
         if(GameMgr.Inst.curSceneType==GameMgr.SceneType.UIScene)

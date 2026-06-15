@@ -1,4 +1,5 @@
-﻿using GFW;
+﻿using DG.Tweening;
+using GFW;
 using GFW.Gameplay;
 using System;
 using System.Collections;
@@ -30,11 +31,27 @@ public class GameMgr : Manager<GameMgr>
     /// 当前游戏场景
     /// </summary>
     public GameScene curGameScene = null;
+    /// <summary>
+    /// 游戏默认开始场景
+    /// </summary>
+    public string defaultScene = "StartLevel";
 
+    protected override void Init()
+    {
+        base.Init();
+        DOTween.Init(true);
 
+    }
+  
     private void OnApplicationQuit()
     {
-        if(isGameStarted)SaveMgr.SaveGameData();
+        if (isGameStarted)
+        {
+            SaveData curSaveData=SaveMgr.GetCurSaveData();
+            curSaveData.curScene=SceneManager.GetActiveScene().name;
+            curSaveData.playerPos=(GameScene.Inst.Pawn as PlayerCharacter).logicCellpos;
+            SaveMgr.SaveGameData();
+        }
     }
 
     public void StartGame()

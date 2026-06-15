@@ -16,7 +16,7 @@ public class CharacterState : FsmState
     public override void OnEnter()
     {
         base.OnEnter();
-        if(CharacterFsmBlackboard==null) CharacterFsmBlackboard=(CharacterFsmBlackboard)OwnerFsm.BlackboardInternal;
+        //if(CharacterFsmBlackboard==null) CharacterFsmBlackboard=(CharacterFsmBlackboard)OwnerFsm.BlackboardInternal;
         if (SkeletonAnimation==null)
         {
             SkeletonAnimation=CharacterFsmBlackboard.SpineObject.GetComponent<SkeletonAnimation>();

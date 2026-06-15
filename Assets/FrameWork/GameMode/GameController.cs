@@ -6,22 +6,30 @@ namespace GFW.Gameplay
     {
 
         [HideInInspector]
-        public GamePawn Target { get; private set; }//控制目标
+        public GamePawn target { get; private set; }//控制目标
 
         [HideInInspector]
-        public GameHUD Hud { get; private set; }
+        public GameHUD hud { get; private set; }
 
-        public event Action<GamePawn> OnControlledPawnChanged;
+        public event Action<GamePawn> onControlledPawnChanged;
         
+
+        protected virtual void OnControlledPawnChanged()
+        {
+            onControlledPawnChanged?.Invoke(target);
+        }
         public void SetPawn(GamePawn obj)
         {
-            Target=obj;
-            OnControlledPawnChanged?.Invoke(Target);
+            if (!ReferenceEquals(target, obj))
+            {
+                target=obj;
+                OnControlledPawnChanged();
+            }
         }
 
         public void SetHud(GameHUD hud)
         {
-            Hud=hud;
+            this.hud=hud;
         }
     }
 }

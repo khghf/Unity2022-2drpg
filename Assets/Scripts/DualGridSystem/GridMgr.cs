@@ -49,7 +49,6 @@ public class GridLayer
     /// </summary>
     public int LayerIndex = -1;
     public Sprite[] Tiles;
-
 }
 
 /// <summary>
@@ -288,9 +287,14 @@ public class GridMgr : Singleton<GridMgr>
         Vector3 res=new Vector3(0,0,0);
 
         res.x=LogicGridTopLeft.x+HalfGridCellSize+col*GridCellSize;
-        res.y=LogicGridTopLeft.y+HalfGridCellSize+row*GridCellSize;
+        res.y=LogicGridTopLeft.y-HalfGridCellSize-row*GridCellSize;
 
         return res;
+    }
+
+    public static int LogicCellXYToIndex(Vector2Int pos)
+    {
+        return LogicCellXYToIndex(pos.x, pos.y);
     }
 
     /// <summary>

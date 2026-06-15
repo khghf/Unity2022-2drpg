@@ -170,7 +170,6 @@ public class GameSave<T>where T : GameSaveData,new()
             {
                 Directory.CreateDirectory(GameSaveSettings.GetSaveFloderPath());
             }
-
             byte[] bytes = SerializationUtility.SerializeValue(GetCurSaveData(), GameSaveSettings.dataFormat);
             //确保存档文件的存在
             //if(!File.Exists(path))

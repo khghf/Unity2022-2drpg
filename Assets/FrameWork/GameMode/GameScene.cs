@@ -7,39 +7,31 @@ namespace GFW.Gameplay
     {
         private GamePawn pawn;
         public GamePawn Pawn => pawn;
+        [SerializeField]
         private GameController controller;
         public GameController Controller => controller;
+        [SerializeField]
         private GameHUD hud;
         public GameHUD Hud => hud;
 
-        private MonoBehaviour camera;
-        public MonoBehaviour Camera => camera;
+        [SerializeField]
+        private Camera gameCamera;
+        public Camera GameCamera => gameCamera;
+
         //private void Awake()
         //{
         //    Init(this.pawn, this.controller, this.hud);
         //}
 
-        public void Init(GameController controller,GamePawn pawn,MonoBehaviour camera,GameHUD hud)
+        public void Init(GameController controller,GamePawn pawn, Camera camera,GameHUD hud)
         {
-            if (controller!=null)
-            {
-                this.controller = controller;
-            }
-            if (pawn!=null)
-            {
-                this.pawn = pawn;
-                this.controller.SetPawn(pawn);
-            }
-            if (camera!=null)
-            {
-                this .camera = camera;
-            }
-            if (hud!=null)
-            {
-                this.hud = hud;
-                this.controller.SetHud(hud);
-            }
-            
+
+            this.controller = controller;
+            this.pawn = pawn;
+            this.gameCamera = camera;
+            this.hud = hud;
+            this.controller?.SetPawn(pawn);
+            this.controller?.SetHud(hud);
         }
     }
 }

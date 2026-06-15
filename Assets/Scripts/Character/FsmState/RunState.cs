@@ -35,6 +35,6 @@ public class RunState : CharacterState
     public override void OnExit()
     {
         base.OnExit();
-        OwnerFsm.Owner.GetComponent<BattleCharacter>().StopMoveTo();
+        OwnerFsm.owner.GetComponent<BattleCharacter>().StopMoveTo();
     }
 }

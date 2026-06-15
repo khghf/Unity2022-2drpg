@@ -79,8 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: DefaultCharacterName
   Pivot: {fileID: 5062607666264327942}
-  pos: {x: 0, y: 0}
-  moveSpeed: 1
+  moveSpeed: 3
 --- !u!1 &8992152461677058233
 GameObject:
   m_ObjectHideFlags: 0

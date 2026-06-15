@@ -19,7 +19,7 @@ public class YooAssetInitializer:MonoBehaviour
         if (YooAssets.Initialized)StopCoroutine("Start");
         YooAssets.Initialize();
 
-        fsm.Owner=gameObject;
+        fsm.owner=gameObject;
         fsm.Blackboard.AddItem("PlayMode", playMode);
         fsm.Blackboard.AddItem("PackageName", DefaultPackageName);
         fsm.Blackboard.AddItem("AppVersion", AppVersion);
